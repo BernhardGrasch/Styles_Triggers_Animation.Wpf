@@ -1,0 +1,36 @@
+﻿<Window x:Class="Styles_Triggers_Animation.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Styles_Triggers_Animation.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource aufgabe1}" Grid.Row="0" Grid.Column="0" Text="Hier könnte Ihr Text stehen!" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+        <CheckBox x:Name="aufgabe2" Grid.Row="0" Grid.Column="1" 
+                  VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
+        
+        <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Foreground="{Binding ElementName=aufgabe2, Path=Foreground}"
+                   Text="{Binding ElementName=aufgabe2, Path=Content}"></TextBlock>
+
+        <TextBlock Style="{StaticResource aufgabe3}" Text="Hello World!" Grid.Column="0" Grid.Row="1" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        
+        
+    </Grid>
+</Window>

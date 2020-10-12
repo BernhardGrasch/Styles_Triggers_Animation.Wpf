@@ -1,0 +1,54 @@
+﻿<Application x:Class="Styles_Triggers_Animation.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Styles_Triggers_Animation.Wpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <Style x:Key="aufgabe1" TargetType="TextBlock">
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="CheckBox">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Foreground" Value="Green"/>
+                    <Setter Property="Content" Value="Ja!"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Content" Value="Nein!"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="aufgabe3" TargetType="TextBlock">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" To="28"
+                                             Storyboard.TargetProperty="FontSize"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" To="18" 
+                                             Storyboard.TargetProperty="FontSize"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Application.Resources>
+</Application>
